@@ -12,11 +12,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 
 const store=configureStore()
-(localStorage.getItem('token3') &&
-store.dispatch(startSetCustomers()) ||
-store.dispatch(startSetDepartments()) ||
-store.dispatch(startSetEmployees()) ||
-store.dispatch(startSetTickets()))
+
+store.dispatch(startSetCustomers()) 
+store.dispatch(startSetDepartments()) 
+store.dispatch(startSetEmployees()) 
+store.dispatch(startSetTickets())
 
 store.subscribe(()=>{
     // console.log(store.getState())
