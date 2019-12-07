@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import axios from '../config/axios'
 import Swal from 'sweetalert2'
 
 class RegisterForm extends React.Component{
@@ -24,7 +24,7 @@ handleSubmit=(e)=>{
     console.log(formData)
     
  
-axios.post('http://localhost:3026/users/register' ,formData)
+axios.post('/users/register' ,formData)
 .then(response=>{
     console.log(response.data)
     if(response.data._id){

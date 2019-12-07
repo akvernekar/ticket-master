@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const axios=Axios.create({
-    baseURL:'http://localhost:3026'
+    baseURL:'https://guarded-inlet-85085.herokuapp.com'
 })
 
 export default axios
