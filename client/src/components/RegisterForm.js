@@ -25,12 +25,12 @@ handleSubmit=(e)=>{
         username:this.state.username,
         password:this.state.password,
         email:this.state.email}
-    console.log(formData)
+    // console.log(formData)
     
     if(this.state.msg=='valid'){
 axios.post('/users/register' ,formData)
 .then(response=>{
-    console.log(response.data)
+    // console.log(response.data)
     if(response.data._id){
         this.props.history.push('/users/login')
     }else{

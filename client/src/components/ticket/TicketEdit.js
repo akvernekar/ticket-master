@@ -1,19 +1,19 @@
-import React from 'react'
+// import React from 'react'
 
-class TicketEdit extends React.Component{
+// class TicketEdit extends React.Component{
 
-componentDidMount=()=>{
+// componentDidMount=()=>{
     
-}
+// }
 
 
-    render(){
-        return (
-            <div>
+//     render(){
+//         return (
+//             <div>
 
-            </div>
-        )
-    }
-}
+//             </div>
+//         )
+//     }
+// }
 
-export default TicketEdit
+// export default TicketEdit

@@ -42,7 +42,7 @@ this.setState({department:e.target.value})
     }
 
     render(){
-        console.log(this.state)
+        // console.log(this.state)
         return(<div className='container'>
 
        

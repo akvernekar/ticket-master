@@ -1,6 +1,5 @@
 import React from 'react'
 import Form from './form'
-import axios from 'axios'
 import {connect} from 'react-redux'
 import {startAddEmploy} from '../../actions/employee'
 

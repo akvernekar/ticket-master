@@ -16,25 +16,7 @@ class Form extends React.Component{
         }
     }
 
-    // componentDidMount=()=>{
-    //     axios.get('http://localhost:3026/customers',{
-    //         headers:{
-    //         'x-auth':localStorage.getItem('token3')
-    //     }})
-    //         .then(response=>{
-    //             this.setState({customers:response.data})
-    //         })
-    //  axios.get('http://localhost:3026/departments',{
-    //             headers:{
-    //             'x-auth':localStorage.getItem('token3')
-    //         }})
-    //             .then(response=>{
-    //                 this.setState({departments:response.data})
-    //             })
     
-        
-    // }
-
 selectedc=(e)=>{
     this.setState({selectc:e.target.value})
 }
@@ -52,7 +34,7 @@ submit=(e)=>{
             "message":this.state.message,
             "code":code
         }
-console.log(formData)
+// console.log(formData)
 
 this.props.dispatch(startAddTicket(formData))
 }
@@ -65,7 +47,7 @@ this.setState({priority:e.target.value})
 }
 
     render(){
-        console.log(this.state.priority)
+        // console.log(this.state.priority)
         return(
             <div>
                 <div >

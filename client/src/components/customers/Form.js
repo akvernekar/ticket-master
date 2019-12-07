@@ -18,7 +18,7 @@ this.setState({
 handleSubmit=(e)=>{
     e.preventDefault()
     const formData=this.state
-    console.log(formData)
+    // console.log(formData)
     this.props.handleSubmit(formData)
 }
     render(){

@@ -1,7 +1,6 @@
 import React from 'react'
 import CustomerForm from './Form'
 import {connect} from 'react-redux'
-import axios from 'axios'
 import {startAddCustomer} from '../../actions/customer'
 
 class CustomerNew extends React.Component{
