@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../src/config/axios'
 
 import {Link,Route,Switch,BrowserRouter} from 'react-router-dom'
 import RegisterForm from './components/RegisterForm'
@@ -18,7 +19,7 @@ import axios from 'axios'
 
 function App() {
   function handleClick(){
-    axios.delete('http://localhost:3026/users/logout',{
+    axios.delete('/users/logout',{
       headers:{
         'x-auth':localStorage.getItem('token3')
       }
