@@ -8,7 +8,8 @@ class RegisterForm extends React.Component{
         this.state={
             username:'',
             password:'',
-            email:''
+            email:'',
+            msg:''
            
         }
     }
@@ -20,10 +21,13 @@ this.setState({
 
 handleSubmit=(e)=>{
     e.preventDefault()
-    const formData=this.state
+    const formData={
+        username:this.state.username,
+        password:this.state.password,
+        email:this.state.email}
     console.log(formData)
     
- 
+    if(this.state.msg=='valid'){
 axios.post('/users/register' ,formData)
 .then(response=>{
     console.log(response.data)
@@ -41,8 +45,40 @@ axios.post('/users/register' ,formData)
 }).catch(err=>{
  console.log(err)
 })
-
+    }else{
+        Swal.fire({
+            title: 'Oops...',
+            text: 'password must be valid',
+          })
+    }
 }
+
+test=(e)=> { 
+    var res='Must have'; 
+    var str = e.target.value
+        if(!str.match(/[a-z]/g)){
+            res+=' ,Lowercase'
+        }
+        if(!str.match(/[A-Z]/g)){
+            res+=' ,Uppercase'
+        }
+        if(!str.match(/[0-9]/g)){
+            res+=' ,Number'
+        }
+        if(!str.match(/[^a-zA-Z\d]/g)){
+            res+=' ,Special case'
+        }
+        if(str.length <= 8){
+            res+=' ,Minimum length 8'
+        }
+if (str.match(/[a-z]/g) && str.match( 
+                    /[A-Z]/g) && str.match( 
+                    /[0-9]/g) && str.match( 
+                    /[^a-zA-Z\d]/g) && str.length >= 8) {
+                res = "valid" }
+    
+   this.setState({msg:res})
+} 
     render(){
         return(<div style={{backgroundImage: "url(" + "https://www.billboard.com/files/styles/article_main_image/public/media/ticket-illo-biz-billboard-1548.jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",backgroundAttachment: "fixed",minHeight:600,margin:0
     }} class="jumbotron jumbotron-fluid">
@@ -55,7 +91,7 @@ axios.post('/users/register' ,formData)
 
                     <label htmlFor='email'>Email</label> <input id="email"  type='email' className="form-control" value={this.state.email} onChange={this.handleChange} name='email' required/>
                    
-                    <label htmlFor='password'>Password </label><input id="password" type='password'  className="form-control" value={this.state.password} onChange={this.handleChange} name='password' required/>
+                    <label htmlFor='password'>Password </label><input id="password" type='password'  className="form-control" value={this.state.password} onChange={this.handleChange} name='password' onInput={this.test} required/><span style={this.state.msg=='valid'?{color:'green'}:{color:'red'}}>{this.state.password && this.state.msg}</span>
                     
                     
                    <br/>
