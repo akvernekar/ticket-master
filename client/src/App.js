@@ -15,7 +15,6 @@ import EmployList from './components/employees/EmployList'
 import EmployAdd from './components/employees/EmployAdd'
 import EmployEdit from './components/employees/EmployEdit'
 import PrivateRoute from './components/privateRoute'
-import axios from 'axios'
 
 function App() {
   function handleClick(){
