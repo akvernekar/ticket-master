@@ -47,7 +47,7 @@ class CustomersList extends React.Component {
         
     }
     render(){
-        return (<div style={{backgroundImage: "url(" + "https://img.freepik.com/free-vector/blue-abstract-acrylic-brush-stroke-textured-background_53876-86373.jpg?size=626&ext=jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",minHeight:600,margin:0
+        return (<div style={{backgroundImage: "url(" + "https://www.fabulousblogging.com/wp-content/uploads/2012/10/bkg-2.png" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",minHeight:620,margin:0
     }} class="jumbotron jumbotron-fluid">
             <div className='container col-md-6 offset-md-1' >
                 <br/>
