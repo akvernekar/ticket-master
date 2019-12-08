@@ -25,7 +25,7 @@ this.props.dispatch(startShowCustomer(id))
 
     render(){
 
-        return(<div style={{backgroundImage: "url(" + "https://img.freepik.com/free-vector/blue-abstract-acrylic-brush-stroke-textured-background_53876-86373.jpg?size=626&ext=jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",minHeight:600,margin:0
+        return(<div style={{backgroundImage: "url(" + "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQU-hnzf-0byqct-scfEj-JxcOizjU5aaOcI2MejZfphxU7vjv" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",minHeight:600,margin:0
     }} class="jumbotron jumbotron-fluid">
             <div className='container'>
                 <h2>Edit customer details</h2>
