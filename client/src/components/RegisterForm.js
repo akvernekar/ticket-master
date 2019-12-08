@@ -80,7 +80,7 @@ if (str.match(/[a-z]/g) && str.match(
    this.setState({msg:res})
 } 
     render(){
-        return(<div style={{backgroundImage: "url(" + "https://www.billboard.com/files/styles/article_main_image/public/media/ticket-illo-biz-billboard-1548.jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",backgroundAttachment: "fixed",minHeight:600,margin:0
+        return(<div style={{backgroundImage: "url(" + "https://www.billboard.com/files/styles/article_main_image/public/media/ticket-illo-biz-billboard-1548.jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",backgroundAttachment: "fixed",minHeight:650,margin:0
     }} class="jumbotron jumbotron-fluid">
  <div className='col-md-3 form-group offset-md-1'>
             <div className="container ">

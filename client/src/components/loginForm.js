@@ -49,7 +49,7 @@ axios.post('/users/login',formData)
 
 }
     render(){
-        return(<div style={{backgroundImage: "url(" + "https://www.billboard.com/files/styles/article_main_image/public/media/ticket-illo-biz-billboard-1548.jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",backgroundAttachment: "fixed",minHeight:600,margin:0
+        return(<div style={{backgroundImage: "url(" + "https://www.billboard.com/files/styles/article_main_image/public/media/ticket-illo-biz-billboard-1548.jpg" + ")",backgroundRepeat:'no-repeat',backgroundSize:"cover",backgroundAttachment: "fixed",minHeight:650,margin:0
     }} class="jumbotron jumbotron-fluid">
             <div className='container form-group col-md-6 offset-md-1'>
                 <h3>Login</h3>
