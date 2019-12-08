@@ -30,7 +30,7 @@ render(){
             <br/>
             <br/>
             </div>
-            <table className="table table-hover" >
+            <table className="table table-hover" style={{'overflow-x':'auto'}} >
                 <thead>
                     <tr>
                     <th>Name</th>

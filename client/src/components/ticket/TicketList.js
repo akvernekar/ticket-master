@@ -81,7 +81,7 @@ const id=e.target.value
                 <br/>
                 <div className='row'>
                     <div className='col-md-7'>
-                <table class="table table-hover">
+                <table class="table table-hover" style={{'overflow-x':'auto'}}>
                     <thead>
                         <tr>
                             <th>Code</th>

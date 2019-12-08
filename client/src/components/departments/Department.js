@@ -54,7 +54,7 @@ remove=(id)=>{
 
 
                 <h2>Listing Department</h2>
-                <table className="table table-hover" >
+                <table className="table table-hover" style={{'overflow-x':'auto'}} >
                     <thead>
                         <tr>
                             <th scope="col">id</th>
@@ -65,7 +65,7 @@ remove=(id)=>{
                     <tbody>
                     {this.props.departments.map(item=>{
                     return(
-                     <tr key={item._id}>
+                     <tr scope='row' key={item._id}>
                         <td>{item._id}</td>
                         <td>{item.name}</td> 
                         <td><button className="btn btn-danger" onClick={()=>this.remove(item._id)}>remove</button></td>
