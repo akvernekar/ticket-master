@@ -17,6 +17,16 @@ const ticketReducer=(state=initialState,action)=>{
                 }
             })
         }
+        case 'EDIT_TICKET':{
+            return [...state].map(i=>{
+                if(i._id==action.payload._id){
+                    return action.payload
+                }else{
+                    return i
+                }
+            })
+        }
+
         case 'FILTER_TICKETS':{
             return action.payload
         }

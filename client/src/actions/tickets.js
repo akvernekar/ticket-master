@@ -1,5 +1,7 @@
 import axios from '../config/axios'
 import Swal from 'sweetalert2'
+
+
 export const setTickets=(data)=>{
     return {type:'SET_TICKETS',
 payload:data}
@@ -152,7 +154,9 @@ export const singleTicket=(data)=>{
     return {type:'SET_SINGLE_TICKET',
 payload:data}
 }
-
+export const resetSingleTicket=()=>{
+    return {type:'RESET_SINGLE_TICKET'}
+}
 export const startSingleTicket=(id)=>{
     return (dispatch)=>{
         axios.get(`/tickets/${id}`,{
@@ -160,7 +164,34 @@ export const startSingleTicket=(id)=>{
             'x-auth':localStorage.getItem('token3')
         }})
         .then(response=>{
+            dispatch(resetSingleTicket())
             dispatch(singleTicket(response.data))
+        })
+    }
+}
+
+export const editTicket=(data)=>{
+    return {type:'EDIT_TICKET',
+payload:data}
+}
+
+
+export const startEditTicket=(id,formData)=>{
+    return (dispatch)=>{
+        axios.put(`/tickets/${id}`,formData,{
+            headers:{
+            'x-auth':localStorage.getItem('token3')
+        }})
+        .then(response=>{
+            // console.log(response.data)
+            if(response.data.name=='CastError'){
+
+            }else{
+            dispatch(editTicket(response.data))
+            dispatch(resetSingleTicket())}
+        })
+        .catch(err=>{
+            console.log(err)
         })
     }
 }

@@ -5,6 +5,9 @@ const singleTicketReducer=(state=initialState,action)=>{
         case 'SET_SINGLE_TICKET':{
             return action.payload
         }
+        case 'RESET_SINGLE_TICKET':{
+            return {}
+        }
         default:{
             return {...state}
         }

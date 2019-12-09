@@ -1,10 +1,10 @@
 import React from 'react'
 import Form from './Form'
-
+import EditForm from '../ticket/TicketEdit'
 import {ProgressBar} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import Pai from './Charts'
-import {startSetTickets,startRemoveTicket,startSetStatusTicket,startFilterTickets,startSearchByCode} from '../../actions/tickets'
+import {startSetTickets,startRemoveTicket,startSetStatusTicket,startFilterTickets,startSearchByCode,startSingleTicket} from '../../actions/tickets'
 
 
 
@@ -26,15 +26,8 @@ class TicketList extends React.Component{
         
 const status=e.target.checked
 const id=e.target.value
-        
-        
-         
-       
-        
-       this.props.dispatch(startSetStatusTicket(status,id))
-            
-        
-    }
+ this.props.dispatch(startSetStatusTicket(status,id))
+             }
 
     remove=(id)=>{
         
@@ -52,6 +45,10 @@ const id=e.target.value
        
         this.props.dispatch(startSearchByCode(e.target.value))
         
+    }
+
+    edit=(id)=>{
+        this.props.dispatch(startSingleTicket(id))
     }
 
     
@@ -118,6 +115,9 @@ const id=e.target.value
                                             <input value={ticket._id} type='checkbox' checked={ticket.isResolved} onChange={this.check}/>
                                         </td>
                                         <td>
+                                        <button className="btn btn-outline-info" onClick={()=>{this.edit(ticket._id)}}>edit</button>
+
+
                                             <button className="btn btn-outline-danger" onClick={()=>{this.remove(ticket._id)}}>remove</button>
                                         </td>
 
@@ -133,7 +133,7 @@ const id=e.target.value
                 </table>
                 </div>
                 <div className='col-md-4 offset-md-1'>
-                <Form /> 
+                        {Object.keys(this.props.ticket).length!=0 ? <EditForm ticket={this.props.ticket}/>: <Form/>} 
                 </div>
                
                 </div>
@@ -168,7 +168,8 @@ const id=e.target.value
 tickets:state.tickets,
 customers:state.customers,
 departments:state.departments,
-employees:state.employees
+employees:state.employees,
+ticket:state.ticket
 
       }
   }   
