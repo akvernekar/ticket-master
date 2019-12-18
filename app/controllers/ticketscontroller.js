@@ -1,7 +1,7 @@
 const Ticket =require('../models/ticket')
 
 module.exports.list=(req,res)=>{
-    Ticket.find({userid:req.user._id})/*.populate(['customer','department','employees.id'])*/
+    Ticket.find({userid:req.user._id}) /*.populate(['customer','department','employees.id'])*/
     .then((tickets)=>{
         res.json(tickets)
     })

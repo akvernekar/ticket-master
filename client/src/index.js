@@ -19,7 +19,7 @@ store.dispatch(startSetEmployees())
 store.dispatch(startSetTickets())
 
 store.subscribe(()=>{
-    console.log(store.getState())
+    // console.log(store.getState())
 })
 
 const ele=(
